@@ -1,0 +1,96 @@
+{
+  "entries": [
+    {
+      "id": "5482682d-356b-41bd-a66d-a30f52aad374",
+      "content": " feeling good",
+      "mood": "good",
+      "moodScore": 5,
+      "tags": [
+        "gratitude"
+      ],
+      "wellnessScore": 50,
+      "aiInsights": "",
+      "recommendations": [],
+      "createdAt": "2025-08-22T13:02:24.201Z",
+      "updatedAt": "2025-08-22T13:02:24.201Z"
+    },
+    {
+      "id": "cea2d5f9-a32f-4819-bb14-629139a69951",
+      "content": "feeling too good bcz i got the job",
+      "mood": "excellent",
+      "moodScore": 8,
+      "tags": [
+        "work"
+      ],
+      "wellnessScore": 50,
+      "aiInsights": "",
+      "recommendations": [],
+      "createdAt": "2025-08-22T13:05:38.470Z",
+      "updatedAt": "2025-08-22T13:05:38.470Z"
+    },
+    {
+      "id": "271def0d-9c93-44a7-a816-ba8cdcdcb5c0",
+      "content": "bad",
+      "mood": "poor",
+      "moodScore": 2,
+      "tags": [],
+      "wellnessScore": 50,
+      "aiInsights": "",
+      "recommendations": [],
+      "createdAt": "2025-08-22T14:16:45.568Z",
+      "updatedAt": "2025-08-22T14:16:45.568Z"
+    },
+    {
+      "id": "b5b417e7-6644-406a-ba4e-d707aa9adf2e",
+      "content": "hey",
+      "mood": "neutral",
+      "moodScore": 5,
+      "tags": [],
+      "wellnessScore": 50,
+      "aiInsights": "",
+      "recommendations": [],
+      "createdAt": "2025-08-23T10:24:54.200Z",
+      "updatedAt": "2025-08-23T10:24:54.200Z"
+    },
+    {
+      "id": "c246d004-6b2b-4b3f-b253-42f0e1f78735",
+      "content": "happy",
+      "mood": "neutral",
+      "moodScore": 5,
+      "tags": [],
+      "wellnessScore": 50,
+      "aiInsights": "",
+      "recommendations": [],
+      "createdAt": "2025-08-23T18:42:55.638Z",
+      "updatedAt": "2025-08-23T18:42:55.638Z"
+    },
+    {
+      "id": "cbb1ae3c-200f-40dd-91eb-fdd9c8b59cdb",
+      "content": "feeling good",
+      "mood": "good",
+      "moodScore": 6,
+      "tags": [
+        "work"
+      ],
+      "wellnessScore": 50,
+      "aiInsights": "",
+      "recommendations": [],
+      "createdAt": "2025-08-24T04:49:40.807Z",
+      "updatedAt": "2025-08-24T04:49:40.807Z"
+    },
+    {
+      "id": "0f1d53e0-6d12-4222-b6c2-4a32c85fb713",
+      "content": "i am feeling very bad, because I didn't got the placement",
+      "mood": "terrible",
+      "moodScore": 5,
+      "tags": [
+        "work"
+      ],
+      "wellnessScore": 50,
+      "aiInsights": "",
+      "recommendations": [],
+      "createdAt": "2025-08-25T15:42:01.793Z",
+      "updatedAt": "2025-08-25T15:42:01.793Z"
+    }
+  ]
+}

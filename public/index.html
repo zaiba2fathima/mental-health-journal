@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Health Journal & Wellness Chatbot</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1 class="logo">
+                    <i class="fas fa-heart"></i>
+                    Wellness Journal
+                </h1>
+                <nav class="nav">
+                    <button class="nav-btn active" data-tab="journal">
+                        <i class="fas fa-book-open"></i>
+                        Journal
+                    </button>
+                    <button class="nav-btn" data-tab="chatbot">
+                        <i class="fas fa-comments"></i>
+                        Chatbot
+                    </button>
+                    <button class="nav-btn" data-tab="analytics">
+                        <i class="fas fa-chart-line"></i>
+                        Analytics
+                    </button>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Journal Tab -->
+            <section id="journal" class="tab-content active">
+                <div class="journal-container">
+                    <div class="journal-header">
+                        <h2>Daily Journal Entry</h2>
+                        <p>Express your thoughts and feelings. Your AI companion will help analyze your wellness.</p>
+                    </div>
+                    
+                    <form id="journalForm" class="journal-form">
+                        <div class="form-group">
+                            <label for="journalContent">How are you feeling today?</label>
+                            <textarea 
+                                id="journalContent" 
+                                name="content" 
+                                placeholder="Write about your day, thoughts, feelings, or anything on your mind..."
+                                required
+                            ></textarea>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="mood">Mood</label>
+                                <select id="mood" name="mood">
+                                    <option value="excellent">Excellent 😊</option>
+                                    <option value="good">Good 🙂</option>
+                                    <option value="neutral" selected>Neutral 😐</option>
+                                    <option value="poor">Poor 😔</option>
+                                    <option value="terrible">Terrible 😢</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="moodScore">Mood Score (1-10)</label>
+                                <input type="range" id="moodScore" name="moodScore" min="1" max="10" value="5">
+                                <span class="score-display">5</span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="tags">Tags (optional)</label>
+                            <input type="text" id="tags" name="tags" placeholder="work, family, stress, gratitude...">
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-save"></i>
+                            Save Entry
+                        </button>
+                    </form>
+                    
+                    <div class="entries-section">
+                        <h3>Recent Entries</h3>
+                        <div id="entriesList" class="entries-list">
+                            <!-- Entries will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Chatbot Tab -->
+            <section id="chatbot" class="tab-content">
+                <div class="chatbot-container">
+                    <div class="chatbot-header">
+                        <h2>Wellness Chatbot</h2>
+                        <p>Chat with your AI wellness companion for support and guidance.</p>
+                    </div>
+                    
+                    <div class="chat-container">
+                        <div id="chatMessages" class="chat-messages">
+                            <div class="message bot-message">
+                                <div class="message-content">
+                                    <i class="fas fa-robot"></i>
+                                    <p>Hello! I'm your wellness companion. How can I help you today? Feel free to share your thoughts, ask for advice, or just chat about your day.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <form id="chatForm" class="chat-input-form">
+                            <input 
+                                type="text" 
+                                id="chatInput" 
+                                placeholder="Type your message here..."
+                                required
+                            >
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Analytics Tab -->
+            <section id="analytics" class="tab-content">
+                <div class="analytics-container">
+                    <div class="analytics-header">
+                        <h2>Wellness Analytics</h2>
+                        <p>Track your mental wellness journey with detailed insights and patterns.</p>
+                    </div>
+                    
+                    <div class="analytics-grid">
+                        <div class="analytics-card">
+                            <h3>Overview</h3>
+                            <div id="overviewStats" class="stats-grid">
+                                <!-- Overview stats will be loaded here -->
+                            </div>
+                        </div>
+                        
+                        <div class="analytics-card">
+                            <h3>Wellness Trends</h3>
+                            <div id="wellnessTrends" class="trends-chart">
+                                <!-- Trends chart will be loaded here -->
+                            </div>
+                        </div>
+                        
+                        <div class="analytics-card">
+                            <h3>Mood Analysis</h3>
+                            <div id="moodAnalysis" class="mood-chart">
+                                <!-- Mood analysis will be loaded here -->
+                            </div>
+                        </div>
+                        
+                        <div class="analytics-card">
+                            <h3>Weekly Comparison</h3>
+                            <div id="weeklyComparison" class="comparison-chart">
+                                <!-- Weekly comparison will be loaded here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Loading Modal -->
+    <div id="loadingModal" class="modal">
+        <div class="modal-content">
+            <div class="spinner"></div>
+            <p>Processing your request...</p>
+        </div>
+    </div>
+
+    <!-- Entry Detail Modal -->
+    <div id="entryModal" class="modal">
+        <div class="modal-content entry-modal">
+            <span class="close">&times;</span>
+            <div id="entryModalContent">
+                <!-- Entry details will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="chatbot.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
