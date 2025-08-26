@@ -11,7 +11,7 @@ A comprehensive mental health journal application with an AI-powered wellness ch
 - **Comprehensive Analytics**: Detailed wellness statistics, trends, and mood analysis
 - **Storage**: SQLite database with Lowdb for reliable local storage
 - **Responsive Design**: Modern, accessible UI that works on all devices
-- **Easy Startup**: Windows batch file for simple application launch
+
 
 ## Tech Stack
 
@@ -51,15 +51,13 @@ A comprehensive mental health journal application with an AI-powered wellness ch
 
 4. **Start the application**
 
-   **Option 1: Using npm scripts**
+   
    ```bash
    npm run dev    # Development mode with auto-reload
    npm start      # Production mode
    ```
 
-   **Option 2: Windows users (recommended)**
-   - Double-click `start.bat` file
-   - This will automatically install dependencies and start the app
+   
 
 5. **Access the application**
    - Frontend: `http://localhost:3000`
@@ -91,15 +89,14 @@ mental-health-journal/
 │   ├── index.html    # Main application page
 │   ├── styles.css    # Application styling
 │   ├── script.js     # Frontend logic
-│   └── chatbot.js    # Chatbot interface
+│    
 ├── routes/           # API route handlers
 │   ├── entries.js    # Journal entry endpoints
 │   └── analytics.js  # Analytics endpoints
 ├── db.js             # Database initialization and utilities
 ├── server.js         # Main Express server
-├── start.bat         # Windows startup script
 ├── package.json      # Dependencies and scripts
-└── README.md         # This file
+└── README.md         # Documentation
 ```
 
 ## Key Features Explained
@@ -118,11 +115,7 @@ Track your mental wellness journey with:
 - **Distribution**: Wellness score spread and patterns
 - **Comparison**: Period-to-period wellness comparisons
 
-### Easy Startup
-Windows users can simply double-click `start.bat` to:
-- Automatically install dependencies
-- Start the development server
-- Access the application immediately
+
 
 ## Contributing
 
@@ -136,12 +129,5 @@ Feel free to contribute to this project by:
 
 MIT License - see LICENSE file for details.
 
-## Support
 
-If you encounter any issues:
-1. Check that Node.js is properly installed
-2. Verify your `.env` file configuration
-3. Ensure all dependencies are installed (`npm install`)
-4. Check the console for error messages
-5. Open an issue on the project repository
 
