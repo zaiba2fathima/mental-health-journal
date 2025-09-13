@@ -1,56 +1,56 @@
 const express = require('express');
-// Removed MongoDB/Mongoose in favor of SQLite
+
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const path = require('path');
 require('dotenv').config();
 console.log('Current working directory:',process.cwd());
 
-// Import OpenAI for chatbot functionality
+
 const OpenAI = require('openai');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Initialize OpenAI client with Gemini API configuration
+
 const openai = new OpenAI({
     apiKey: process.env.GEMINI_API_KEY, // Use the new Gemini API key from .env
     baseURL: "https://generativelanguage.googleapis.com/v1beta/openai/", // Use Gemini's compatibility layer URL
 });
 
-// Startup diagnostics
+
 console.log('Starting server...');
 console.log(`Environment: ${process.env.NODE_ENV || 'development'}`);
 console.log(`PORT: ${PORT}`);
 console.log(`MONGODB_URI set: ${process.env.MONGODB_URI ? 'yes' : 'no'}`);
 console.log(`GEMINI_API_KEY set: ${process.env.GEMINI_API_KEY ? 'yes' : 'no'}`); // Check for the new key
 
-// Middleware
+
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Health check
+
 app.get('/health', (req, res) => {
 	res.json({ status: 'ok', time: new Date(), env: process.env.NODE_ENV || 'development' });
 });
 
-// Serve static files from public directory
+
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Initialize SQLite database
+
 const { init } = require('./db');
 init().then(() => console.log('Lowdb: initialized')).catch(err => console.error('Lowdb initialization error:', err));
 
-// Import routes
+
 const entriesRoutes = require('./routes/entries');
 const analyticsRoutes = require('./routes/analytics');
 
-// API routes
+
 app.use('/api/entries', entriesRoutes);
 app.use('/api/analytics', analyticsRoutes);
 
-// Real AI-powered chatbot endpoints
+
 app.post('/api/chatbot/analyze-entry/:id', async (req, res) => {
     try {
         if (!process.env.GEMINI_API_KEY) {
@@ -166,7 +166,7 @@ Context: ${context || 'General wellness conversation'}`;
     }
 });
 
-// Helper function to extract recommendations from AI response
+
 function extractRecommendations(aiInsights) {
     const recommendations = [];
     const lines = aiInsights.split('\n');
@@ -180,18 +180,18 @@ function extractRecommendations(aiInsights) {
     return recommendations.length > 0 ? recommendations : ['Focus on self-care and mindfulness', 'Consider talking to a trusted friend or professional'];
 }
 
-// Serve the main HTML file
+
 app.get('/', (req, res) => {
 	res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-// Error handling middleware
+
 app.use((err, req, res, next) => {
 	console.error(err.stack);
 	res.status(500).json({ error: 'Something went wrong!' });
 });
 
-// 404 handler
+
 app.use((req, res) => {
 	res.status(404).json({ error: 'Route not found' });
 });
