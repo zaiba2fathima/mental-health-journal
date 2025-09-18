@@ -9,7 +9,7 @@ A comprehensive mental health journal application with an AI-powered wellness ch
 - **Wellness Insights**: Personalized recommendations and improvement suggestions
 - **Mood Tracking**: Visual representation of emotional patterns over time
 - **Comprehensive Analytics**: Detailed wellness statistics, trends, and mood analysis
-- **Storage**: SQLite database with Lowdb for reliable local storage
+- **Storage**: JSON file (data.json) managed through Node.js for lightweight local storage
 - **Responsive Design**: Modern, accessible UI that works on all devices
 
 
@@ -17,7 +17,7 @@ A comprehensive mental health journal application with an AI-powered wellness ch
 
 - **Frontend**: HTML, CSS, JavaScript
 - **Backend**: Node.js, Express.js
-- **Database**: SQLite with Lowdb adapter
+- **Database**: Lowdb (JSON file storage managed via db.js)
 - **AI Integration**: Google Gemini API
 - **Additional**: CORS, Body-parser, Moment.js, UUID
 
